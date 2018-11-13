@@ -1,4 +1,4 @@
-#! python3
+#! /home/mo/miniconda3/bin/python3
 # pw.py - An insecure password locker program.
 
 PASSWORDS = {'email': 'F7minlBDDuvMJuxESSKHFhTxFtjVB6',

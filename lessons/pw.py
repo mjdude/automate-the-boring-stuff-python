@@ -1,7 +1,8 @@
-#! python3
+#! /home/mo/miniconda3/bin/python3
 # pw.py - An insecure password manager / locker program
 
-import sys
+import sys, pyperclip
+
 PASSWORDS = {'email': 'F7minlBDDuvMJuxESSKHFhTxFtjVB6',
              'blog': 'VmALvQyKAxiVH5G8v01if1MLZF3sdt',
              'luggage': '12345'}
@@ -11,9 +12,8 @@ if len(sys.argv) < 2:
 
 account = sys.argv[1]
 
-password = PASSWORDS.get(account)
-
-if password == None:
-    print('Password does not exist for ' + account)
-
-print('Password equals ' + password)
+if account in PASSWORDS:
+    pyperclip.copy(PASSWORDS[account])
+    print('Password for ' + account + ' has been copied to the clipboard')
+else:
+    print('Password for ' + account + ' does not exist')
